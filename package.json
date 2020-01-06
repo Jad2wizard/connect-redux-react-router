@@ -25,14 +25,12 @@
 		"@babel/preset-env": "^7.7.4",
 		"@babel/preset-react": "^7.7.4",
 		"babel-eslint": "^10.0.3",
-		"babel-plugin-add-module-exports": "^1.0.2",
 		"eslint": "^6.7.2",
 		"eslint-config-prettier": "^6.7.0",
 		"eslint-plugin-prettier": "^3.1.1",
 		"husky": "^3.1.0",
 		"prettier": "^1.19.1",
 		"pretty-quick": "^2.0.1",
-		"react": "^16.12.0",
 		"shelljs": "^0.8.3"
 	},
 	"husky": {
@@ -42,7 +40,10 @@
 	},
 	"dependencies": {
 		"history": "^4.10.1",
-		"react-router": "^4.3.1",
 		"uglify-js": "^3.7.1"
+	},
+	"peerDependencies": {
+		"react": "^16.12.0",
+		"react-router": "^5.1.2"
 	}
 }
