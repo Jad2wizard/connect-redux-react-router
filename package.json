@@ -1,0 +1,46 @@
+{
+	"name": "connect-redux-react-router",
+	"version": "0.4.0",
+	"description": "delete the previous files of webpack output in the compiler emit hook",
+	"main": "./dist/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "babel src -d dist -s true",
+		"eslint": "git diff --name-status --cached head > diff.log && node scripts/precommit.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Jad2wizard/clean-output-plugin.git"
+	},
+	"keywords": [
+		"webpack",
+		"plugin"
+	],
+	"author": "jadwizard",
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/cli": "^7.7.4",
+		"@babel/core": "^7.7.4",
+		"@babel/preset-env": "^7.7.4",
+		"babel-eslint": "^10.0.3",
+		"babel-plugin-add-module-exports": "^1.0.2",
+		"eslint": "^6.7.2",
+		"eslint-config-prettier": "^6.7.0",
+		"eslint-plugin-prettier": "^3.1.1",
+		"husky": "^3.1.0",
+		"prettier": "^1.19.1",
+		"pretty-quick": "^2.0.1",
+		"react": "^16.12.0",
+		"shelljs": "^0.8.3"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged && npm run eslint"
+		}
+	},
+	"dependencies": {
+		"history": "^4.10.1",
+		"react-router": "^4.3.1",
+		"uglify-js": "^3.7.1"
+	}
+}

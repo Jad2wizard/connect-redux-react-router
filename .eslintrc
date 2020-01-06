@@ -1,0 +1,33 @@
+{
+	"env": {
+		"es6": true,
+		"node": true,
+		"commonjs": true,
+		"jest": true
+	},
+	"extends": ["eslint:recommended", "prettier"],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"experimentalObjectRestSpread": true,
+			"jsx": true
+		},
+		"sourceType": "module"
+	},
+	"plugins": ["prettier"],
+	"parser": "babel-eslint",
+	"rules": {
+		"indent": ["error", "tab", {"SwitchCase": 1}],
+		"no-console": "warn",
+		"no-unused-vars": "off",
+		"no-extra-boolean-cast": "off",
+		"prefer-const": "off",
+		"eqeqeq": [
+			"error",
+			"always",
+			{
+				"null": "ignore"
+			}
+		],
+		"prettier/prettier": "error"
+	}
+}
