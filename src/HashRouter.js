@@ -1,11 +1,11 @@
 import React from 'react'
 import {Router} from 'react-router'
-import {createBrowserHistory as createHistory} from 'history'
+import {createHashHistory as createHistory} from 'history'
 import {ACTION_TYPE, getQuery} from './utils'
 
 const history = createHistory()
 
-class BrowserRouter extends React.Component {
+class HashRouter extends React.Component {
 	history = history
 	unlisten = null
 
@@ -43,4 +43,4 @@ class BrowserRouter extends React.Component {
 	}
 }
 
-export {BrowserRouter, history}
+export {HashRouter, history}

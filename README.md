@@ -45,13 +45,28 @@ ReactDOM.render(
 
 ```
 //demo-saga.js
-import {browserHistory as history} from 'connect-redux-react-router'
+import {browserHistory as history, ROUTE_CHANGE_ACTION} from 'connect-redux-react-router'
 
-function* test(){
-    while(true){
-        yield take('REQ_FETCH')
-        yield call(fetch, '/something')
-        history.push('/another-pathname')
+function* historyPush(){
+    try{
+        while(true){
+            yield take('REQ_FETCH')
+            yield call(fetch, '/something')
+            history.push('/another-pathname')
+        }
+    } catch(e){
+        console.loe)e
+    }
+}
+
+function* watchRouteChange(){
+    try{
+        while(true){
+            const {pathname, query} = yield take(ROUTE_CHANGE_ACTION)
+            yield call(fetch, '/something')
+        }
+    } catch(e){
+        console.log(e)
     }
 }
 ```
