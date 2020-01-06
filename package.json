@@ -13,8 +13,8 @@
 		"url": "https://github.com/Jad2wizard/clean-output-plugin.git"
 	},
 	"keywords": [
-		"webpack",
-		"plugin"
+		"react-router",
+		"redux"
 	],
 	"author": "jadwizard",
 	"license": "MIT",
