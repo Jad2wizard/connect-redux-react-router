@@ -6,3 +6,4 @@ scripts/
 babel.config.js
 .prettierrc
 package-lock.json
+src/

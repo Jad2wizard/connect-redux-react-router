@@ -9,12 +9,12 @@ module.exports = api => {
 			[
 				'@babel/preset-env',
 				{
-					targets: {
-						node: '8.9.0'
-					}
+					useBuiltIns: 'usage',
+					modules: false
 				}
-			]
+			],
+			'@babel/preset-react'
 		],
-		plugins: ['babel-plugin-add-module-exports']
+		plugins: ['@babel/plugin-proposal-class-properties']
 	}
 }
