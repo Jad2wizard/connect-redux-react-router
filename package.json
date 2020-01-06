@@ -1,6 +1,6 @@
 {
 	"name": "connect-redux-react-router",
-	"version": "0.1.4",
+	"version": "0.2.0",
 	"description": "delete the previous files of webpack output in the compiler emit hook",
 	"main": "./dist/index.js",
 	"scripts": {
