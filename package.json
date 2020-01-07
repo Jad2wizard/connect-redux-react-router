@@ -1,47 +1,67 @@
 {
 	"name": "connect-redux-react-router",
 	"version": "0.2.0",
-	"description": "delete the previous files of webpack output in the compiler emit hook",
-	"main": "./dist/index.js",
+	"description": "",
+	"main": "./dist/bundle.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "babel src -d dist -s true",
+		"test": "jest --no-cache",
+		"build": "webpack --mode production",
+		"esm": "tsc",
 		"eslint": "git diff --name-status --cached head > diff.log && node scripts/precommit.js"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Jad2wizard/clean-output-plugin.git"
-	},
-	"keywords": [
-		"react-router",
-		"redux"
-	],
-	"author": "jadwizard",
-	"license": "MIT",
+	"author": "",
+	"license": "ISC",
 	"devDependencies": {
-		"@babel/cli": "^7.7.4",
-		"@babel/core": "^7.7.4",
+		"@babel/core": "^7.4.0",
 		"@babel/plugin-proposal-class-properties": "^7.7.4",
-		"@babel/preset-env": "^7.7.4",
-		"@babel/preset-react": "^7.7.4",
-		"babel-eslint": "^10.0.3",
-		"eslint": "^6.7.2",
+		"@babel/polyfill": "^7.4.0",
+		"@babel/preset-env": "^7.4.2",
+		"@babel/preset-react": "^7.0.0",
+		"@babel/preset-typescript": "^7.7.4",
+		"@types/enzyme": "^3.10.3",
+		"@types/enzyme-adapter-react-16": "^1.0.5",
+		"@types/jest": "^24.0.23",
+		"@types/react": "^16.9.2",
+		"@types/react-router": "^5.1.3",
+		"@typescript-eslint/eslint-plugin": "^2.5.0",
+		"@typescript-eslint/parser": "^2.5.0",
+		"autoprefixer": "^9.5.0",
+		"awesome-typescript-loader": "^5.2.1",
+		"babel-eslint": "^10.0.1",
+		"babel-loader": "^8.0.5",
+		"core-js": "^3.4.4",
+		"cross-env": "^5.2.0",
+		"enzyme": "^3.10.0",
+		"enzyme-adapter-react-16": "^1.15.1",
+		"enzyme-to-json": "^3.4.3",
+		"eslint": "^5.16.0",
 		"eslint-config-prettier": "^6.7.0",
 		"eslint-plugin-prettier": "^3.1.1",
-		"husky": "^3.1.0",
-		"prettier": "^1.19.1",
-		"pretty-quick": "^2.0.1",
-		"uglify-js": "^3.7.1",
-		"shelljs": "^0.8.3"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "pretty-quick --staged && npm run eslint"
-		}
+		"eslint-plugin-react": "^7.12.4",
+		"husky": "^3.0.9",
+		"jest": "^24.9.0",
+		"jest-cli": "^24.9.0",
+		"jest-config": "^24.9.0",
+		"jest-css-modules-transform": "^3.1.0",
+		"json-loader": "^0.5.7",
+		"prettier": "^1.18.2",
+		"pretty-quick": "^2.0.0",
+		"shelljs": "^0.8.3",
+		"source-map-loader": "^0.2.4",
+		"ts-jest": "^24.1.0",
+		"typescript": "^3.6.3",
+		"webpack": "^4.29.6",
+		"webpack-cli": "^3.3.0"
 	},
 	"dependencies": {
 		"history": "^4.10.1",
-		"react": "^16.12.0",
+		"react": "^16.8.6",
 		"react-router": "^5.1.2"
+	},
+	"husky": {
+		"hooks": {
+			"pre-push": "npm test",
+			"pre-commit": "pretty-quick --staged && npm run eslint"
+		}
 	}
 }

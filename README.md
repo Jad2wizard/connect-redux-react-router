@@ -45,7 +45,7 @@ ReactDOM.render(
 
 ```
 //demo-saga.js
-import {browserHistory as history, ROUTE_CHANGE_ACTION} from 'connect-redux-react-router'
+import {BrowserHistory as history, ROUTE_CHANGE_ACTION} from 'connect-redux-react-router'
 
 function* historyPush(){
     try{

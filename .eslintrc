@@ -1,12 +1,17 @@
 {
 	"env": {
+		"browser": true,
 		"es6": true,
 		"node": true,
 		"commonjs": true,
-		"jest": true,
-		"browser": true
+		"jest": true
 	},
-	"extends": ["eslint:recommended", "prettier"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier"
+	],
 	"parserOptions": {
 		"ecmaFeatures": {
 			"experimentalObjectRestSpread": true,
@@ -14,13 +19,16 @@
 		},
 		"sourceType": "module"
 	},
-	"plugins": ["prettier"],
-	"parser": "babel-eslint",
+	"plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+	"parser": "@typescript-eslint/parser",
 	"rules": {
 		"indent": ["error", "tab", {"SwitchCase": 1}],
+		"react/jsx-uses-react": "error",
+		"react/jsx-uses-vars": "error",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
 		"no-console": "warn",
 		"no-unused-vars": "off",
-		"no-extra-boolean-cast": "off",
 		"prefer-const": "off",
 		"eqeqeq": [
 			"error",
@@ -29,6 +37,21 @@
 				"null": "ignore"
 			}
 		],
-		"prettier/prettier": "error"
+		"prettier/prettier": "error",
+		"@typescript-eslint/no-unused-vars": "off",
+		"@typescript-eslint/no-empty-function": "off",
+		"@typescript-eslint/member-delimiter-style": [
+			"error",
+			{
+				"multiline": {
+					"delimiter": "none",
+					"requireLast": true
+				},
+				"singleline": {
+					"delimiter": "semi",
+					"requireLast": false
+				}
+			}
+		]
 	}
 }

@@ -1,20 +1,20 @@
-import React from 'react'
+import * as React from 'react'
 import {Router} from 'react-router'
-import {createHashHistory as createHistory} from 'history'
-import {ACTION_TYPE, getQuery} from './utils'
+import {createBrowserHistory as createHistory, UnregisterCallback} from 'history'
+import {ROUTE_CHANGE, getQuery, Props} from './utils'
 
 const history = createHistory()
 
-class HashRouter extends React.Component {
+class BrowserRouter extends React.Component<Props, {}> {
 	history = history
-	unlisten = null
+	unlisten: UnregisterCallback
 
 	componentDidMount() {
 		const {store} = this.props
 		if (store && store.dispatch) {
 			this.unlisten = this.history.listen((location, action) => {
 				store.dispatch({
-					type: ACTION_TYPE,
+					type: ROUTE_CHANGE,
 					payload: {
 						...location,
 						action,
@@ -24,7 +24,7 @@ class HashRouter extends React.Component {
 			})
 
 			store.dispatch({
-				type: ACTION_TYPE,
+				type: ROUTE_CHANGE,
 				payload: {
 					action: 'PUSH',
 					query: {},
@@ -43,4 +43,4 @@ class HashRouter extends React.Component {
 	}
 }
 
-export {HashRouter, history}
+export {BrowserRouter, history}

@@ -1,6 +1,9 @@
-.vscode/*
 node_modules/*
-package-lock.json
-*.log
-test/*
 dist/
+*.DS_Store
+.idea/*
+diff.log
+lib/*
+typings/*
+package-lock.json
+.vscode/
