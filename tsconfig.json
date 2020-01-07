@@ -5,7 +5,6 @@
 		"strictNullChecks": true,
 		"outDir": "./lib",
 		"declaration": true,
-		"declarationDir": "./typings",
 		"module": "commonjs", //tsc will throw ES6 module error if setting 'es6' in there
 		"target": "es6",
 		"jsx": "react",
